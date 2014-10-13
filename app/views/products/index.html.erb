@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Climate</th>
       <th>Description</th>
       <th>Image url</th>
       <th></th>
@@ -16,6 +17,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><h2><%= product.name %></h2></td>
+        <td><%= product.climate %></td>
         <td><%= product.description %></td>
         <td><img src="<%= product.image_url %>"></td>
         <td><%= link_to 'Show', product %></td>
