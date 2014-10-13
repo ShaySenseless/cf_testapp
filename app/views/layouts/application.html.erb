@@ -3,12 +3,27 @@
 <head>
   <title>CfTestapp</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="page-header jumbotron">
+
+	<a href="../pages/landing_page"><h1>Some Random Website</h1></a>
+
+</div>
+
+<h2>Some random text</h2>
+<p>Find me in app/views/pages/landing_page.html.erb</p>
+<p>Ruby on Rails will bust your balls</p>
 
 <%= yield %>
+<footer class="navbar navbar-inverse">
 
+	<a href="../pages/contact.html.erb">Contact</a>
+	<a href="../pages/about.html.erb">About</a>
+
+</footer>
 </body>
 </html>
