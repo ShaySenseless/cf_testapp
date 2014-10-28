@@ -1,4 +1,6 @@
 CfTestapp::Application.routes.draw do
+  get "test_form/new"
+  get "test_form/create"
   resources :products
 
   get "pages/landing_page"
@@ -12,6 +14,8 @@ CfTestapp::Application.routes.draw do
 
   get 'form_input',   to: 'contact#form_input'
   get 'form_output',  to: 'contact#form_output'
+
+  post 'form_input', to: 'contact#form_output'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

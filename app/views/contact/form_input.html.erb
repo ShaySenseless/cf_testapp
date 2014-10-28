@@ -1,19 +1,25 @@
-<h1>Form input page</h1>
+<h1>Contact us</h1>
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for @contact do |f| %>
+    <%= form_tag do %>
+      
+      <%= label_tag(:name, "Name:") %>
+      <%= text_field_tag(:name) %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <br>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= label_tag(:email, "Email:") %>
+      <%= text_field_tag(:email) %>
 
-      <%= f.label :message %>
-      <%= f.text_area :message %>
+      <br>
+      
+      <%= label_tag(:message, "Message:") %>
+      <%= text_area_tag(:message, "Please enter your message", size: "24x6") %>
+      
+      <br>
+      <%= submit_tag("Send", class: "btn btn-large btn-primary") %>
 
-      <%= f.submit "Send", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>
