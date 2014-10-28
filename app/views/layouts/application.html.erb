@@ -8,23 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<img src="../../../images/logoB.jpg" height="100" width="100px">
-<div class="page-header jumbotron">
 
-	<a href="../pages/landing_page"><h1>Some Random Website</h1></a>
+<%= render '/pages/header' %>
 
-</div>
+	<h2>Some random text</h2>
+	<p>Find me in app/views/pages/landing_page.html.erb</p>
+	<p>Ruby on Rails will bust your balls</p>
 
-<h2>Some random text</h2>
-<p>Find me in app/views/pages/landing_page.html.erb</p>
-<p>Ruby on Rails will bust your balls</p>
+	<%= yield %>
 
-<%= yield %>
-<footer class="navbar navbar-inverse">
+<%= render '/pages/footer' %>
 
-	<a href="../pages/contact.html.erb">Contact</a>
-	<a href="../pages/about.html.erb">About</a>
-
-</footer>
 </body>
 </html>
