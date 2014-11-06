@@ -13,6 +13,15 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Devise
+gem 'devise'
+
+# CanCanCan
+gem 'cancancan'
+
+# Rails Admin
+gem 'rails_admin'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
