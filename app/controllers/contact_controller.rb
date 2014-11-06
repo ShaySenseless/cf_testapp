@@ -1,14 +1,20 @@
 class ContactController < ApplicationController
 
+	# Normally named "new"
 	def form_input
-
-		def mailer
-			ActionMailer::Base.mail(:from => 'from@domain.com', :to => 'shayofer89@gmail.com', :subject => "Welcome to My Awesome Site", :body => 'I am the email body.').deliver
-		end
-	
+		@contact = Contact.new
 	end
 
+	# Normally named "create"
 	def form_output
+		if params[:name].present?
+			@contact_form_output = params[:name], params[:email], params[:message]
+		end
+
+		# Mailer action
+		ActionMailer::Base.mail(from: params[:email], to: 'shayofer89@gmail.com', subject: "New message from contact form", body: params[:message]).deliver
+
+		# Intentional routing mistake fix
 		render "form_result"	
 	end
 end
