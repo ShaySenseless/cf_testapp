@@ -7,7 +7,10 @@ CfTestapp::Application.routes.draw do
   devise_for :users
   get "test_form/new"
   get "test_form/create"
-  resources :products
+  
+  resources :products do
+    resources :testimonials
+  end
 
   get "pages/landing_page"
   get "pages/contact", to: 'contact#form_input'
