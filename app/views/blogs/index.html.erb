@@ -1,0 +1,32 @@
+<h1>Listing blogs</h1>
+
+<table class="table container-fluid">
+  <thead class="panel panel-default">
+    <tr class="row panel panel-heading">
+      <th class="col-md-1">Number</th>
+      <th class="col-md-2">Date</th>
+      <th class="col-md-2">Time ago</th>
+      <th class="col-md-6">Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr class="row">
+        <td class="col-md-1"><%= blog.id %></td>
+        <td class="col-md-2"><%= blog.created_at.strftime("%B %d %Y") %></td>
+        <td class="col-md-3"><%= time_ago_in_words(blog.created_at) %></td>
+        <td class="col-md-3"><%= blog.title %></td>
+        <td type="button" class="btn btn-primary col-md-1"><%= link_to 'Show', blog %></td>
+        <td type="button" class="btn btn-success col-md-1"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td type="button" class="btn btn-danger col-md-1"><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @blogs %>
+
+<br>
+
+<%= link_to 'New post', new_blog_path, class: 'btn btn-primary' %>

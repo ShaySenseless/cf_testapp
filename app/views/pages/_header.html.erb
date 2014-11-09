@@ -1,21 +1,28 @@
-<div class="page-header jumbotron row">
-	<a href="/"><img src="../../../images/logoB.jpg" height="100" width="100px" class="col-md-2"></a>
-	<h1 class="col-md-10">Some Random Website</h1>
-	<div>
-		<tr>
-			<td><%= link_to 'Products', products_path %></td>
-			<td><%= link_to 'About', pages_about_path %></td>
-			<td><%= link_to 'Contact', pages_contact_path %></td>
-		</tr>
-		<tr>
-			<% if user_signed_in? %>
-			  <li>You are logged in as <%= current_user.email %></li>
-			  <li><%= link_to "Edit", edit_user_path(current_user), method: :update %></li>  
-			  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-			<% else %>
-			  <li><%= link_to "Sign Up", new_user_registration_path %></li>
-			  <li><%= link_to "Sign In", new_user_session_path %></li>
-			<% end %>
-		</tr>
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header row">
+			<a href="/"><img src="../../../images/logoB.jpg" class="col-md-1 navbar-brand"></a>
+			<h1 class="col-md-10" style="color:#ccc">Some Random Website</h1>
+			<div class="nav navbar-nav col-md-11">
+				<div class="row">
+					<ul class="navbar-left btn-group">
+						<li class="btn btn-info"><%= link_to 'About', pages_about_path %></li>
+						<li class="btn btn-info"><%= link_to 'Products', products_path %></li>
+						<li class="btn btn-info"><%= link_to 'Blog', blogs_path %></li>
+						<li class="btn btn-info"><%= link_to 'Contact', pages_contact_path %></li>
+					</ul>
+					<ul class="navbar-right btn-group">
+						<% if user_signed_in? %>
+						  <li class="btn btn-success">You are logged in as <%= current_user.email %></li>
+						  <li class="btn btn-warning"><%= link_to "Edit", edit_user_path(current_user), method: :update %></li>  
+						  <li class="btn btn-danger"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+						<% else %>
+						  <li class="btn btn-warning"><%= link_to "Sign Up", new_user_registration_path %></li>
+						  <li class="btn btn-info"><%= link_to "Sign In", new_user_session_path %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
+</nav>

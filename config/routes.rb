@@ -1,4 +1,8 @@
 CfTestapp::Application.routes.draw do
+  resources :blogs do
+    resources :comments
+    end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get "test_form/new"

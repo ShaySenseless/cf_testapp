@@ -1,5 +1,7 @@
-<div>
-	<h2>Featured product:</h2>
-	<h3><%= @featured_product.name %></h3>
-	<a href="../../products/2"><img src="<%= @featured_product.image_url %>"></a>
+<div class="container-fluid">
+	<div class="row">
+		<h3 class="col-md-2"><%= @featured_product.name %></h3>
+		<h3 class="col-md-4"><%= @featured_product.description %></h3>
+		<a class="col-md-6" href="../../products/2"><img src="<%= @featured_product.image_url %>"></a>
+	</div>
 </div>

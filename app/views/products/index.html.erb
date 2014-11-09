@@ -1,13 +1,13 @@
 <h1>Listing products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Climate</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Price</th>
+<table class="table container-fluid">
+  <thead class="panel panel-primary">
+    <tr class="row panel panel-heading">
+      <th class="col-md-2">Name</th>
+      <th class="col-md-1">Climate</th>
+      <th class="col-md-4">Description</th>
+      <th class="col-md-2">Image url</th>
+      <th class="col-md-1">Price</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,19 +16,21 @@
 
   <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><h2><%= product.name %></h2></td>
-        <td><%= product.climate %></td>
-        <td><%= product.description %></td>
-        <td><img src="<%= product.image_url %>"></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="row">
+        <td class="col-md-1"><h2><%= product.name %></h2></td>
+        <td class="col-md-1"><%= product.climate %></td>
+        <td class="col-md-2"><%= product.description %></td>
+        <td class="col-md-2"><img src="<%= product.image_url %>"></td>
+        <td class="col-md-1"><%= product.price %></td>
+        <td type="button" class="btn btn-primary col-md-1"><%= link_to 'Show', product %></td>
+        <td type="button" class="btn btn-success col-md-1"><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td type="button" class="btn btn-danger col-md-1"><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @products %>
 
 <br>
 

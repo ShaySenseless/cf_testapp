@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CfTestapp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>CfTestapp</title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-<%= render '/pages/header' %>
+	<%= render '/pages/header' %>
 
-	<h2>Some random text</h2>
-	<p>Find me in app/views/pages/landing_page.html.erb</p>
-	<p>Ruby on Rails will bust your balls</p>
+	<!-- 	<h2>Some random text</h2>
+		<p>Find me in app/views/pages/landing_page.html.erb</p>
+		<p>Ruby on Rails will bust your balls</p>
+	 -->
+		<%= yield %>
 
-	<%= yield %>
+	<%= render '/pages/footer' %>
 
-<%= render '/pages/footer' %>
-
-</body>
+	</body>
 </html>
