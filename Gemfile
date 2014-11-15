@@ -7,7 +7,24 @@ gem 'rails', '4.0.2'
 #gem 'sqlite3'
 group :development do
   gem 'sqlite3'
+  gem 'guard'
+  gem 'guard-spork'
 end
+
+# Guard
+gem 'guard-rspec', require: false
+
+# Spork
+gem "spork-rails"
+
+# Rspec
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+# Factory Girl
+gem "factory_girl_rails", "~> 4.0"
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
