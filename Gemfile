@@ -22,6 +22,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
+# Dotenv
+gem 'dotenv-rails', :groups => [:development, :test]
+
+# Stripe
+gem 'stripe'
+
 # Factory Girl
 gem "factory_girl_rails", "~> 4.0"
 

@@ -48,6 +48,12 @@ c<p>
 
 <% end %>
 
+<!-- Stripe integration -->
+
+<%= form_tag "/payments/create" do %>
+  <%= render partial: "stripe_checkout_button" %>
+<% end %>
+
 <!-- Create new testimonial: -->
 <h2>Add a Testimonial:</h2>
 <%= form_for([@product, @product.testimonials.build]) do |f| %>
