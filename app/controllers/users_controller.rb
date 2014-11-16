@@ -7,6 +7,7 @@ class UsersController < ApplicationController
  end
 
   def edit
+    debugger
   end
 
   def update

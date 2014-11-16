@@ -28,6 +28,8 @@ CfTestapp::Application.routes.draw do
   # correcting naming convention mistake:
   post 'form_input', to: 'contact#form_output'
 
+  post '/payments/create', to: 'payments#create'
+
   # defining users:
   resources :users, only: [:edit, :update, :show]
 

@@ -8,6 +8,15 @@ Bundler.require(:default, Rails.env)
 
 module CfTestapp
   class Application < Rails::Application
+
+    config.filter_parameters << :password
+
+    User.where("login = ? AND password = ?", entered_user_name, entered_password).first
+    Product.where("login = ? AND password = ?", entered_user_name, entered_password).first
+    Comment.where("login = ? AND password = ?", entered_user_name, entered_password).first
+    Testimonial.where("login = ? AND password = ?", entered_user_name, entered_password).first
+    Contact.where("login = ? AND password = ?", entered_user_name, entered_password).first
+    Blog.where("login = ? AND password = ?", entered_user_name, entered_password).first
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

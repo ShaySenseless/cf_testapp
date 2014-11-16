@@ -11,6 +11,9 @@ group :development do
   gem 'guard-spork'
 end
 
+# Debugger
+gem 'debugger'
+
 # Guard
 gem 'guard-rspec', require: false
 
@@ -50,6 +53,9 @@ gem 'rollbar'
 
 # Will paginate:
 gem 'will_paginate'
+
+# Brakeman
+gem "brakeman", :require => false
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

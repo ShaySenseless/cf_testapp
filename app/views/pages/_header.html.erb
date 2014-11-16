@@ -11,6 +11,7 @@
 						<li class="btn btn-info"><%= link_to 'Blog', blogs_path %></li>
 						<li class="btn btn-info"><%= link_to 'Contact', pages_contact_path %></li>
 					</ul>
+
 					<ul class="navbar-right btn-group">
 						<% if user_signed_in? %>
 						  <li class="btn btn-success">You are logged in as <%= current_user.email %></li>
