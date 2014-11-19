@@ -1,7 +1,7 @@
 <div>
 	<div class="panel panel-primary">
 	  <div class="panel-heading">Latest blog posts</div>
-
+	  <%= if Blog.count >= 3 %>
 		<div class="row panel-body">
 			<div class="col-md-2"><%= Blog.order(created_at: :desc).first[:created_at].strftime("%B %d %Y") %></div>
 			<div class="col-md-8"><%= Blog.order(created_at: :desc).first[:title] %></div>
@@ -14,6 +14,6 @@
 			<div class="col-md-2"><%= Blog.order(created_at: :desc).third[:created_at].strftime("%B %d %Y") %></div>
 			<div class="col-md-8"><%= Blog.order(created_at: :desc).third[:title] %></div>
 		</div>
-	
+	<%= end %>
 	</div>
 </div>
