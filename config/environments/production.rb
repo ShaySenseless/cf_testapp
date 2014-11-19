@@ -77,4 +77,7 @@ CfTestapp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Dalli
+  config.cache_store = :dalli_store, nil, { :namespace => NAME_OF_RAILS_APP, :expires_in => 1.day, :compress => true }
 end

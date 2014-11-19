@@ -13,21 +13,6 @@
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
 
-<h2>Add a comment:</h2>
-<%= form_for([@blog, @blog.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
 <h2>Comments</h2>
 <% @blog.comments.each do |comment| %>
   <p>
@@ -40,8 +25,23 @@
     <%= comment.body %>
   </p>
 
+<!-- Why is this calling the Show method??? -->
 	<%= link_to 'Destroy Comment', [comment.blog, comment],
 	               method: :delete,
 	               data: { confirm: 'Are you sure?' } %>
+<% end %>
 
+<h2>Add a comment:</h2>
+<%= form_for([@blog, @blog.comments.build], remote: true) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>

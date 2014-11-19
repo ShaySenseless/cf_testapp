@@ -16,6 +16,14 @@
       <%= f.label :name %><br>
       <%= f.text_field :name %>
     </div>
+
+<!-- JQuery Chosen gem exercise. remove later: -->
+    <%= f.select :name,
+      Product.all.map { |u| [u.name, u.id] },
+      { include_blank: true },
+      { class: 'chosen-select' }
+    %>
+
     <div class="field col-md-2">
       <%= f.label :climate %><br>
       <%= f.text_area :climate %>

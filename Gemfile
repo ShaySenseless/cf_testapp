@@ -57,6 +57,12 @@ gem 'will_paginate'
 # Brakeman
 gem "brakeman", :require => false
 
+# Jquery Chosen plugin for rails:
+gem 'chosen-rails'
+
+# Dalli
+gem 'dalli'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

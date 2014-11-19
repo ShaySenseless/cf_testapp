@@ -5,4 +5,5 @@ class RegistrationsController < Devise::RegistrationsController
 	  end
 	  super
 	end
+	skip_before_filter :verify_authenticity_token, :only => :create
 end
