@@ -9,10 +9,8 @@ group :development do
   gem 'sqlite3'
   gem 'guard'
   gem 'guard-spork'
+  gem 'debugger'
 end
-
-# Debugger
-gem 'debugger'
 
 # Guard
 gem 'guard-rspec', require: false
